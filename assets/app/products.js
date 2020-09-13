@@ -132,7 +132,7 @@ function populate_catalogue(products) {
                 <div class="col-md-6 col-lg-4 mb-2" data-isotope-item data-category="${val.category}">
 
                     <div class="card">
-                        <a href="javascript:fetch_product_details('${key}')">
+                        <a onclick="javascript:fetch_product_details('${key}')" data-toggle="modal" data-target="#__product_details">
                             <img src="assets/img/${val.img}" alt="${val.name + " - " + val.short_desc}" class="card-img-top">
                         </a>
     
@@ -142,7 +142,7 @@ function populate_catalogue(products) {
                                     <div class="mr-2"><span class="small text-muted">${val.category}, ${val.type}</span></div>
                                 </div>
                             </div>
-                            <a href="javascript:fetch_product_details('${key}')">
+                            <a onclick="javascript:fetch_product_details('${key}')" data-toggle="modal" data-target="#__product_details">
                                 <h4>${val.name}</h4>
                             </a>
                             <p class="flex-grow-1">
@@ -194,20 +194,12 @@ function fetch_product_details(prod) {
         
                 <div class="row justify-content-center text-center">
                     <div class="col-xl-6 col-lg-7 col-md-9">
-                        <a href="#" class="m-1 btn btn-secondary" onclick="javascript:bring_catalogue()">Back to catalogue</a>
+                        <a href="#" class="m-1 btn btn-secondary" data-dismiss="modal">Back to catalogue</a>
                     </div>
                 </div>
             </div>
         </section>
     `;
 
-    $("#__catalogue_list").hide();
-    $("#__navbar").hide();
-    $("#__product_details").html(product_details_HTML).show();
-}
-
-function bring_catalogue() {
-    $("#__catalogue_list").show();
-    $("#__navbar").show();
-    $("#__product_details").hide()
+    $("#__product_details").html(product_details_HTML); //.show();
 }

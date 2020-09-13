@@ -1,8 +1,6 @@
-/* 
-/* 
-/*  custom.css
 /*
-/*  If not using Gulp and Sass, add your custom CSS below then include it
-/*  in your page by adding a reference to assets/css/custom.css in the head of each page.
-/*
+Full screen Modal
 */
+.fullscreen-modal .modal-dialog {
+    width: 100%;
+}
