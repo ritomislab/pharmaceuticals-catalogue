@@ -131,7 +131,7 @@ function populate_catalogue(products) {
             catalogue_HTML = catalogue_HTML + `
                 <div class="col-md-6 col-lg-4 mb-2" data-isotope-item data-category="${val.category}">
 
-                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
                         <a href="javascript:fetch_product_details('${key}')">
                             <img src="assets/img/${val.img}" alt="${val.name + " - " + val.short_desc}" class="card-img-top">
                         </a>
