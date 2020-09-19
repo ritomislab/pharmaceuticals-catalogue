@@ -6,7 +6,7 @@ let products = {
         "dosage": "1 tablet thrice daily",
         "composition": "Aclofenac 100mg + Paracetamol 500mg",
         "category": "Pain Reliever",
-        "packing": "10x10",
+        "packing": "1x10x10 tablets",
         "bgColor": "#011D5F",
         "frColor": "#FFFFFF",
         "sbColor": "#939BA3",
@@ -21,7 +21,7 @@ let products = {
         "dosage": "1 tablet thrice daily",
         "composition": "Aclofenac 100mg + Paracetamol 500mg + Serratiopeptidase 15mg",
         "category": "Pain Reliever",
-        "packing": "",
+        "packing": "1x10x10 tablets",
         "bgColor": "#101535",
         "frColor": "#FFFFFF",
         "sbColor": "#939BA3",
@@ -36,10 +36,10 @@ let products = {
         "dosage": "2 tablets twice daily, or as directed by Physician",
         "composition": "Thiamine 100mg",
         "category": "Supplement",
-        "packing": "",
+        "packing": "1x10x10 tablets",
         "bgColor": "#E2E2E2",
-        "frColor": "",
-        "sbColor": "",
+        "frColor": "#000",
+        "sbColor": "#000",
         "img": "rimine.png",
         "details": "Thiamine is important in the breakdown of carbohydrates from foods into products needed by the body. Used to treat or prevent vitamin B1 deficiency and beriberi, a serious condition caused by prolonged lack of vitamin B1.",
     },
@@ -51,7 +51,7 @@ let products = {
         "dosage": "2 teaspoons thrice daily",
         "composition": "Levosalbutamol, Ambroxol & Guaiphensin Cough Syrup",
         "category": "Cough Remedy",
-        "packing": "",
+        "packing": "100ml bottle",
         "bgColor": "#030708",
         "frColor": "#FFFFFF",
         "sbColor": "#939BA3",
@@ -66,7 +66,7 @@ let products = {
         "dosage": "2 teaspoons thrice daily",
         "composition": "Levosalbutamol, Guaiphensin, Terbutaline & Menthol cough syrup",
         "category": "Cough Remedy",
-        "packing": "",
+        "packing": "100ml bottle",
         "bgColor": "#04244B",
         "frColor": "#FFFFFF",
         "sbColor": "#939BA3",
@@ -81,7 +81,7 @@ let products = {
         "dosage": "2 tablets twice daily",
         "composition": "Doxylamine Succinate, Pyridoxine Hydrochloride & Folic Acid Tablets",
         "category": "Pain Reliever",
-        "packing": "10x10 tablets",
+        "packing": "1x10x10 tablets",
         "bgColor": "#88A3B6",
         "frColor": "",
         "sbColor": "",
@@ -96,10 +96,10 @@ let products = {
         "dosage": "1 capsule daily, before breakfast",
         "composition": "Enteric Coated Pantoparazole Sodium & Domperidone Sustained Release Capsules",
         "category": "Gastro Reflux",
-        "packing": "",
+        "packing": "1x10x10 capsules",
         "bgColor": "#CEA9A3",
-        "frColor": "",
-        "sbColor": "",
+        "frColor": "#000",
+        "sbColor": "#000",
         "img": "pentarosedsr.png",
         "details": "Domperidone - a prokinetic which works on the upper digestive tract to increase the movement of the stomach and intestines, allowing the food to move more easily through the stomach. Pantoprazole - a proton pump inhibitor (PPI) which works by reducing the amount of acid in the stomach which helps in the relief of acid-related indigestion and heartburn.",
     },
@@ -169,8 +169,18 @@ function fetch_product_details(prod) {
     console.log(product);
 
     let product_details_HTML = `
-        <section style="background: ${product.bgColor}">
-            <div class="container">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content border-0 text-light" style="background: ${product.bgColor}">
+            <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon bg-white" data-src="assets/img/icons/interface/cross.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path d="M16.2426 6.34311L6.34309 16.2426C5.95257 16.6331 5.95257 17.2663 6.34309 17.6568C6.73362 18.0473 7.36678 18.0473 7.75731 17.6568L17.6568 7.75732C18.0473 7.36679 18.0473 6.73363 17.6568 6.34311C17.2663 5.95258 16.6331 5.95258 16.2426 6.34311Z" fill="#212529"></path>
+                    <path d="M17.6568 16.2426L7.75734 6.34309C7.36681 5.95257 6.73365 5.95257 6.34313 6.34309C5.9526 6.73362 5.9526 7.36678 6.34313 7.75731L16.2426 17.6568C16.6331 18.0473 17.2663 18.0473 17.6568 17.6568C18.0474 17.2663 18.0474 16.6331 17.6568 16.2426Z" fill="#212529"></path>
+                </svg>
+              </button>
+              
+              
+              <div class="container">
                 <div class="row justify-content-center text-center mb-3">
                     <div class="col-xl-8 col-lg-9">
                         <h2 class="display-4 mx-xl-6 mb-1" style="color: ${product.frColor}">${product.name}</h2>
@@ -178,7 +188,7 @@ function fetch_product_details(prod) {
                     </div>
                 </div>
         
-                <div class="row align-items-center justify-content-between o-hidden mb-4">
+                <div class="row align-items-center justify-content-between o-hidden mb-7">
                     <div class="col-md-6 order-sm-2 mb-5 mb-sm-0" data-aos="fade-left">
                         <img src="assets/img/${product.img}" alt="Image">
                     </div>
@@ -188,17 +198,18 @@ function fetch_product_details(prod) {
                         <h4 class="mb-0" style="color: ${product.frColor}">Dosage</h4>
                         <p style="color: ${product.sbColor}">${product.dosage}</p>
                         <h4 class="mb-0" style="color: ${product.frColor}">Packaging</h4>
-                        <p style="color: ${product.sbColor}">${product.type}, ${product.packing}</p>
+                        <p style="color: ${product.sbColor}">Available in ${product.packing}</p>
                     </div>
                 </div>
         
-                <div class="row justify-content-center text-center">
-                    <div class="col-xl-6 col-lg-7 col-md-9">
-                        <a href="#" class="m-1 btn btn-secondary" data-dismiss="modal">Back to catalogue</a>
-                    </div>
+                <div class="row justify-content-center text-center mt-4">
+                    <a href="#" class="btn btn-white" data-dismiss="modal">Back to catalogue</a>
                 </div>
             </div>
-        </section>
+              
+            </div>
+          </div>
+        </div>
     `;
 
     $("#__product_details").html(product_details_HTML); //.show();

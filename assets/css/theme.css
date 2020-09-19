@@ -4318,7 +4318,7 @@ a.close.disabled {
 .modal-body {
   position: relative;
   flex: 1 1 auto;
-  padding: 1rem; }
+  padding: 2rem; }
 
 .modal-footer {
   display: flex;
@@ -4342,27 +4342,27 @@ a.close.disabled {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 500px;
+    max-width: 100%;
     margin: 1.75rem auto; }
   .modal-dialog-scrollable {
-    max-height: calc(100% - 3.5rem); }
+    max-height: calc(100% - 0.5rem); }
     .modal-dialog-scrollable .modal-content {
-      max-height: calc(100vh - 3.5rem); }
+      max-height: calc(100vh - 0.5rem); }
   .modal-dialog-centered {
-    min-height: calc(100% - 3.5rem); }
+    min-height: calc(100% - 0.5rem); }
     .modal-dialog-centered::before {
-      height: calc(100vh - 3.5rem); }
+      height: calc(100vh - 0.5rem); }
   .modal-sm {
     max-width: 300px; } }
 
 @media (min-width: 992px) {
   .modal-lg,
   .modal-xl {
-    max-width: 800px; } }
+    max-width: 100%; } }
 
 @media (min-width: 1200px) {
   .modal-xl {
-    max-width: 1140px; } }
+    max-width: 100%; } }
 
 .tooltip {
   position: absolute;
