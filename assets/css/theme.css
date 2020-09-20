@@ -4235,6 +4235,7 @@ a.close.disabled {
   position: relative;
   width: auto;
   margin: 0.5rem;
+  margin-left: 1rem;
   pointer-events: none; }
   .modal.fade .modal-dialog {
     transition: transform 0.3s ease-out;
@@ -4318,7 +4319,7 @@ a.close.disabled {
 .modal-body {
   position: relative;
   flex: 1 1 auto;
-  padding: 2rem; }
+  padding: 3rem; }
 
 .modal-footer {
   display: flex;

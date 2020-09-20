@@ -118,6 +118,22 @@ let products = {
         "img": "alnipaingel.png",
         "details": "An instant pain relief ointment made with a powerful combination of Diclofenac and natural ingredients - Menthol and Linseed Oil. Reduces Inflammation, provides warmth & delivers long-lasting relief from Muscular strains, Joint Pain, Sprains, Neck, Shoulder and Back Pain. ",
     },
+
+    "nystan": {
+        "name": "Nystan 100 / 200",
+        "short_desc": "Treat a range of fungal infections",
+        "type": "Capsules",
+        "dosage": "As directed by physician",
+        "composition": "Itraconazone Capsules",
+        "category": "Anti-fungal",
+        "packing": "10x1x4 Capsules",
+        "bgColor": "#F0DFD0",
+        "frColor": "#000",
+        "sbColor": "#000",
+        "img": "nystan.png",
+        "details": "Itraconazole is used to treat a variety of fungal infections. It belongs to a class of drugs known as azole antifungals. It works by stopping the growth of fungi.",
+    },
+
 }
 
 function populate_catalogue(products) {
